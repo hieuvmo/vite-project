@@ -11,11 +11,13 @@
     "test": "echo test"
   },
   "lint-staged": {
-    "*.ts*": "eslint --fix --max-warnings 0",
-    "*.js*": "eslint --fix"
+    "*.{js,ts,tsx}": [
+      "npm run lint",
+      "git add ."
+    ]
   },
   "husky": {
-    "scripts": {}
+    "pre-commit": "lint-staged"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",

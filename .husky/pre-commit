@@ -2,5 +2,5 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # TODO: hook script goes here
-npm test
+npm test && npx lint-staged
 
